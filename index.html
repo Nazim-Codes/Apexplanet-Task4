@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <h2 class="logo">My Portfolio</h2>
+    <button id="menuButton" class="menu-button" type="button">☰</button>
+
+    <nav id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#todo">To-Do List</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Home section -->
+    <section class="hero">
+      <div class="hero-text">
+        <p class="small-title">HELLO, I AM</p>
+        <h1>Nazim</h1>
+        <p>I am a beginner web developer who enjoys making simple websites with HTML, CSS and JavaScript.</p>
+        <a class="button" href="#projects">View My Projects</a>
+      </div>
+
+      <!-- This image uses your existing photo file: me.png -->
+      <div class="photo-box">
+        <img src="me.png" alt="Profile photo placeholder">
+      </div>
+    </section>
+
+    <!-- About section -->
+    <section id="about" class="section">
+      <p class="small-title">ABOUT ME</p>
+      <h2>Learning one project at a time.</h2>
+      <p>I am learning front-end development. I use HTML to create content, CSS to style websites and JavaScript to add interaction.</p>
+    </section>
+
+    <!-- Skills section -->
+    <section id="skills" class="section dark-section">
+      <p class="small-title">MY SKILLS</p>
+      <h2>What I know</h2>
+
+      <!-- You can change or add skills below. -->
+      <div class="skills-list">
+        <div class="skill-card"><span>01</span><h3>HTML</h3><p>I can build the structure of a web page.</p></div>
+        <div class="skill-card"><span>02</span><h3>CSS</h3><p>I can style pages and make them responsive.</p></div>
+        <div class="skill-card"><span>03</span><h3>JavaScript</h3><p>I can add basic interactions to a website.</p></div>
+        <div class="skill-card"><span>03</span><h3>NodeJs, ExpressJs</h3><p>I can build servers</p></div>
+        <div class="skill-card"><span>03</span><h3>MongoDB</h3><p>I can save data to database</p></div>
+        <div class="skill-card"><span>04</span><h3>Git and GitHub</h3><p>I can save and share my projects online.</p></div>
+      </div>
+    </section>
+
+    <!-- Dummy projects: change this content later -->
+    <section id="projects" class="section">
+      <p class="small-title">MY PROJECTS</p>
+      <h2>Projects I am working on</h2>
+
+      <div class="project-list">
+        <article class="project-card"><h3>Netflix Clone</h3><p>Responsive Netflix Clone.</p><span>HTML · CSS</span></article>
+        <article class="project-card"><h3>Snake Game</h3><p>Responsive Snake Game.</p><span>HTML · CSS · JavaScript</span></article>
+        <article class="project-card"><h3>Tic Tac Toe Game</h3><p>Responsive Childhood Game.</p><span>HTML · CSS · JavaScript</span></article>
+        <article class="project-card"><h3>Todo List</h3><p>An app for task writing.</p><span>HTML · CSS · JavaScript</span></article>
+        <article class="project-card"><h3>Call Reminder App</h3><p>Remainder for appointment.</p><span>HTML · CSS · JavaScript</span></article>
+        <article class="project-card"><h3>Spotify Clone</h3><p>Backend of Spotify App</p><span>NodeJs · ExpressJs · MongoDB</span></article>
+      </div>
+    </section>
+
+    <!-- To-do list: Task 2 uses localStorage to save tasks in the browser -->
+    <section id="todo" class="section todo-section">
+      <p class="small-title">TO-DO LIST</p>
+      <h2>My daily tasks</h2>
+      <p>Add a task, mark it as complete, or delete it. Your tasks stay saved after a refresh.</p>
+
+      <div class="todo-box">
+        <form id="taskForm">
+          <input id="taskInput" type="text" placeholder="Enter a new task" required>
+          <button class="button" type="submit">Add Task</button>
+        </form>
+
+        <ul id="taskList"></ul>
+        <p id="emptyMessage">No tasks yet. Add your first task!</p>
+      </div>
+    </section>
+    <!-- Product listing section -->
+    <section id="products" class="section dark-section">
+      <p class="small-title">PRODUCT LISTING</p>
+      <h2>Simple online shop</h2>
+      <p>Filter products by category and price. You can also sort by rating.</p>
+
+      <div class="filters">
+        <div>
+          <label for="category">Category</label>
+          <select id="category">
+            <option value="all">All Categories</option>
+            <option value="desk">Desk</option>
+            <option value="home">Home</option>
+            <option value="accessory">Accessories</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="price">Maximum Price: ₹<span id="priceNumber">5000</span></label>
+          <input id="price" type="range" min="500" max="5000" step="500" value="5000">
+        </div>
+
+        <div>
+          <label for="sort">Sort Products</label>
+          <select id="sort">
+            <option value="default">Default</option>
+            <option value="rating">Highest Rating</option>
+          </select>
+        </div>
+      </div>
+
+      <p id="productMessage"></p>
+
+      <!-- Edit product names, prices, ratings and categories below if needed. -->
+      <div id="productList" class="product-list">
+        <article class="product-card" data-category="desk" data-price="800" data-rating="4.5"><div class="product-image">🗂</div><p>Desk</p><h3>Desk Organizer</h3><strong>₹800</strong><span>★ 4.5</span></article>
+        <article class="product-card" data-category="home" data-price="2500" data-rating="4.8"><div class="product-image">💡</div><p>Home</p><h3>Table Lamp</h3><strong>₹2500</strong><span>★ 4.8</span></article>
+        <article class="product-card" data-category="accessory" data-price="1200" data-rating="4.3"><div class="product-image">👜</div><p>Accessories</p><h3>Canvas Bag</h3><strong>₹1200</strong><span>★ 4.3</span></article>
+        <article class="product-card" data-category="desk" data-price="500" data-rating="4.6"><div class="product-image">📝</div><p>Desk</p><h3>Weekly Planner</h3><strong>₹500</strong><span>★ 4.6</span></article>
+        <article class="product-card" data-category="home" data-price="3000" data-rating="4.7"><div class="product-image">🏺</div><p>Home</p><h3>Flower Vase</h3><strong>₹3000</strong><span>★ 4.7</span></article>
+        <article class="product-card" data-category="accessory" data-price="1500" data-rating="4.9"><div class="product-image">🥤</div><p>Accessories</p><h3>Water Bottle</h3><strong>₹1500</strong><span>★ 4.9</span></article>
+      </div>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact" class="section">
+      <p class="small-title">CONTACT ME</p>
+      <h2>Let's work together</h2>
+
+      <form id="contactForm" class="contact-form">
+        <label for="name">Name</label>
+        <input id="name" type="text" placeholder="Your name" required>
+
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="you@example.com" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" rows="5" placeholder="Write your message" required></textarea>
+
+        <button class="button" type="submit">Send Message</button>
+        <p id="formMessage"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with HTML, CSS and JavaScript</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
